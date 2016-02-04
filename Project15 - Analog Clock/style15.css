@@ -1,0 +1,41 @@
+h1 {
+	text-align: center;
+}
+
+body {
+}
+
+.clockbody {
+	background-color: black;
+	height: 480px;
+	width: 480px;
+	
+	border-radius: 50% 50% 0 0;
+	
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+.clockface {
+	background-color: white;
+	height: 400px;
+	width: 400px;
+	
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	right: 0;
+	left: 0;
+	top: 30px;
+	
+	border-radius: 50%;
+	
+}
+
+#myCanvas {
+	border: 1px solid blue; 
+	border-radius: 50%;
+}
