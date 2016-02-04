@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="style8.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="Project8.js"></script>
+	
+	<title>Mastermind</title>
+  </head>
+
+  <body>
+	<h1>Mastermind</h1>
+	
+	<div class="board">
+	  <div class="row" id="row1">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row1circle1"></div>
+				<div class="circle2"><img id="row1circle2"></div>
+				<div class="circle3"><img id="row1circle3"></div>
+				<div class="circle4"><img id="row1circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row1eval">
+		</div>
+	  </div>
+
+	  <div class="row" id="row2">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row2circle1"></div>	
+				<div class="circle2"><img id="row2circle2"></div>
+				<div class="circle3"><img id="row2circle3"></div>
+				<div class="circle4"><img id="row2circle4"></div>				
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row2eval">
+		</div>
+	  </div>	  
+
+	  <div class="row" id="row3">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row3circle1"></div>
+				<div class="circle2"><img id="row3circle2"></div>
+				<div class="circle3"><img id="row3circle3"></div>
+				<div class="circle4"><img id="row3circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row3eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row4">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row4circle1"></div>
+				<div class="circle2"><img id="row4circle2"></div>
+				<div class="circle3"><img id="row4circle3"></div>
+				<div class="circle4"><img id="row4circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row4eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row5">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row5circle1"></div>
+				<div class="circle2"><img id="row5circle2"></div>
+				<div class="circle3"><img id="row5circle3"></div>
+				<div class="circle4"><img id="row5circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row5eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row6">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row6circle1"></div>
+				<div class="circle2"><img id="row6circle2"></div>
+				<div class="circle3"><img id="row6circle3"></div>
+				<div class="circle4"><img id="row6circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row6eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row7">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row7circle1"></div>
+				<div class="circle2"><img id="row7circle2"></div>
+				<div class="circle3"><img id="row7circle3"></div>
+				<div class="circle4"><img id="row7circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row7eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row8">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row8circle1"></div>
+				<div class="circle2"><img id="row8circle2"></div>
+				<div class="circle3"><img id="row8circle3"></div>
+				<div class="circle4"><img id="row8circle4"></div>			
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row8eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row9">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row9circle1"></div>
+				<div class="circle2"><img id="row9circle2"></div>
+				<div class="circle3"><img id="row9circle3"></div>
+				<div class="circle4"><img id="row9circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row9eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="row10">
+		<div class="circles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="row10circle1"></div>
+				<div class="circle2"><img id="row10circle2"></div>
+				<div class="circle3"><img id="row10circle3"></div>
+				<div class="circle4"><img id="row10circle4"></div>
+			</div>
+		</div>
+		<div class="evaluation">
+			<img id="row10eval">
+		</div>
+	  </div>
+	  
+	  <div class="row" id="result">
+		<div class="resultcircles">
+			<div class="fourcirclescontainer">
+				<div class="circle1"><img id="answercircle1"></div>
+				<div class="circle2"><img id="answercircle2"></div>
+				<div class="circle3"><img id="answercircle3"></div>
+				<div class="circle4"><img id="answercircle4"></div>
+			</div>
+		</div>
+	  </div>
+	  
+	  <div id="choosecolors">
+		<div class="choosecolorrow1">
+			<input class="choosecolorbutton" id ="redbutton" type="submit" value="">
+			<input class="choosecolorbutton" id ="orangebutton" type="submit" value="">
+			<input class="choosecolorbutton" id ="yellowbutton" type="submit" value="">
+			<input class="choosecolorbutton" id ="greenbutton" type="submit" value="">
+		</div>
+		<div class="choosecolorrow2">
+			<input class="choosecolorbutton" id ="bluebutton" type="submit" value="">
+			<input class="choosecolorbutton" id ="purplebutton" type="submit" value="">
+			<input class="choosecolorbutton" id ="brownbutton" type="submit" value="">
+			<input class="choosecolorbutton" id ="graybutton" type="submit" value="">
+		</div>
+		<div class="wrapper2">
+			<input id ="submitbutton" type="submit" value="Submit">
+		</div>
+		<div class="wrapper3">
+			<input id ="clearbutton" type="submit" value="Clear">
+		</div>
+	  </div>
+	  
+	  <p class="wrapper1">
+		<input id ="resetbutton" type="submit" value="New Game">
+	  </p>
+	</div>
+		
+  </body>
+  
+</html>
