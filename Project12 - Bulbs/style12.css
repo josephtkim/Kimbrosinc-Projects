@@ -1,0 +1,114 @@
+h1 {
+	text-align: center;
+	font-size: 50px;
+	font-family: cursive;
+	color: yellow;
+}
+
+.lightswitch {
+	background-color: gray;
+    border: 1px, gray;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	
+	top: 10px;
+}
+.switchcontainer {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+	width: 700px;
+	height: 166px;
+	top: 300px;
+	background-color: brown;
+	
+	border-radius: 25px;
+}
+.masterswitchcontainer {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+	width: 700px;
+	height: 100px;
+	top: 400px;
+
+}
+#switch1 {
+	left: 0;
+	right: 500px;
+}
+#switch2 {
+	left: 0;
+	right: 250px;
+}
+#switch3 {
+	left: 0;
+	right: 0;
+}
+#switch4 {
+	left: 250px;
+	right: 0;
+}
+#switch5 {
+	left: 500px;
+	right: 0;
+}
+#master {
+	left: 0;
+	right: 0;
+}
+
+.bulb {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+}
+
+#bulb1 {
+	left: 0;
+	right: 500px;
+}
+#bulb2 {
+	left: 0;
+	right: 250px;
+}
+#bulb3 {
+	left: 0;
+	right: 0;
+}
+#bulb4 {
+	left: 250px;
+	right: 0;
+}
+#bulb5 {
+	left: 500px;
+	right: 0;
+}
+.bulbcontainer {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+	width: 700px;
+	height: 180px;
+}
