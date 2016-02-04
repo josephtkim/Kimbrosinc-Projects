@@ -1,0 +1,177 @@
+h1 {
+  text-align: center;
+  font-size: 60px;
+  font-family: Cooper Black;
+  color: white;
+  margin-top: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+
+  color: white;
+  font-size: 30px;
+}
+
+.col1 {
+  text-align: center;
+  font-size: 40px;
+  width: 400px;	
+	
+  z-index: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+	
+  margin-top: -120px;
+}
+
+.col2 {
+  text-align: center;
+  font-size: 40px;
+  width: 400px;	
+	
+  z-index: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+	
+  margin-top: -90px;
+}
+
+.col3 {
+  text-align: center;
+  font-size: 40px;
+  width: 400px;	
+	
+  z-index: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+	
+  margin-top: -60px;
+}
+
+.row1 {
+  text-align: center;
+  font-size: 40px;
+  width: 100px;	
+	
+  z-index: 1;
+  position: absolute;
+
+  margin-top: -4px;
+}
+
+.row2 {
+  text-align: center;
+  font-size: 40px;
+  width: 100px;	
+	
+  z-index: 1;
+  position: absolute;
+	
+  margin-top: 64px;
+}
+
+.row3 {
+  text-align: center;
+  font-size: 40px;
+  width: 100px;	
+	
+  z-index: 1;
+  position: absolute;
+
+  margin-top: 134px;
+}
+
+.row4 {
+  text-align: center;
+  font-size: 40px;
+  width: 100px;	
+	
+  z-index: 1;
+  position: absolute;	
+
+  margin-top: 204px;
+}
+
+.row5 {
+  text-align: center;
+  font-size: 40px;
+  width: 100px;	
+	
+  z-index: 1;
+  position: absolute;
+	
+  margin-top: 274px;
+}
+
+.box {
+  text-align: center;
+  font-size: 30px;
+	
+  display: table;
+  margin: auto;
+  min-width: 570px;
+  min-height: 400px;
+}
+
+.screen {
+  text-align: center;
+  font-size: 30px;
+  background-color: #cccccc;
+  border: solid;	
+	
+  display: table;
+  margin: auto;
+  min-width: 350px;
+  min-height: 350px;
+}
+
+body {
+  background-color: black;
+}
+
+.easysquare {
+	position:relative;
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0px;
+	float:left;
+	float:up;
+	outline: 1px solid;
+}
+
+.easysquarew {
+	position:relative;
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0px;
+	float:left;
+	float:up;
+	outline: 1px solid;
+}
+
+.wrapper {
+	margin-top: -20px;
+	text-align: center;
+}
+
+#button {
+	background-color: white;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
