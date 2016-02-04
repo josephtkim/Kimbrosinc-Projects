@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style1.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
+		<title>Color Clock</title>
+	</head>
+	
+	<body onload="startTime()">
+	
+	<h1>Random Color Clock</h1>
+	
+	<div class= "siteform">
+		<button type="button" onclick="changebg()">Change Background Color!</button>
+	</div>
+	
+	<script>
+		function changebg() {
+			var color = '#' + (Math.random()*0xFFFFFF<<0).toString(16);			
+			document.body.style.backgroundColor = color;
+		}
+	</script>
+	
+		<div class="container">	
+		<div class="clock">
+		<script>
+		function startTime() {
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML =
+			h + ":" + m + ":" + s;
+			var t = setTimeout(startTime, 5);
+		}
+		function checkTime(i) {
+			if (i < 10) {
+				i = "0" + i;
+			};
+			return i;
+		}
+		</script>
+		
+		<div id = "txt"></div>
+		</div>
+		
+	</body>
+	
+</html>
