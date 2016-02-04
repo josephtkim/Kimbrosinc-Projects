@@ -1,0 +1,90 @@
+h1 {
+	text-align: center;
+	font-size: 50px;
+}
+
+.controllerbody {
+	height: 80px;
+	width: 400px;
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 5px;
+	
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0;
+	right: 0;
+}
+
+.musicplayer {
+	height: 50px;
+	width: 200px;
+	position: absolute;
+	
+	margin-left: auto;
+	margin-right: auto;
+	left: 50px;
+	
+	top: 25px;
+}
+
+.textbox {
+	height: 30px;
+	width: 140px;
+	position: absolute;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0;
+	right: 120px;
+	top: 14px;
+}
+
+.controllers {
+	height: 80px;
+	width: 400px;
+	border: 1px solid black;
+	border-radius: 5px;
+	
+	position: absolute;
+	background-color: gray;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: -1px;
+	right: 0;
+	top: 100px;
+}
+
+.speedrange {
+	height: 30px;
+	width: 300px;
+	position: absolute;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 200px;
+	right: 0;
+	top: 10px;
+}
+
+.screen {
+	position: absolute;
+	width: 100px;
+	height: 70px;
+	margin-left: 0;
+	margin-right: 0;
+	left: 100px;
+	right: 0;
+	
+	top: 45px;
+}
+
+#value {
+	width: 40px;
+}
