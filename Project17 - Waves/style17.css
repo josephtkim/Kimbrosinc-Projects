@@ -1,0 +1,71 @@
+h1 {
+	text-align: center;
+	font-family: arial;
+	color: blue;
+}
+
+body {
+	background-color: lightblue;
+}
+
+.container {
+	background-color: white;
+	height: 400px;
+	width: 750px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+#canvas {
+	border: 1px solid black; 
+}
+
+.switches {
+	height: 100px;
+	width: 200px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 500px;
+}
+
+.amp {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+.freq {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 30px;
+}
+
+.pha {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 15px;
+	right: 0;
+	top: 60px;
+}
+
+.switch {
+	width: 140px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 90px;
+}
