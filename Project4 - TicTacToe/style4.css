@@ -1,0 +1,60 @@
+body {
+	background-color: #996600;
+}
+
+h1 {
+	text-align: center;
+	font-size: 60px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 40px;
+	width: 340px;
+	
+	z-index: 1;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+	margin-top: -28px;
+}
+
+.board {
+	text-align: center;
+	font-size: 30px;
+	width: 400px;
+	height: 400px;
+	
+	display: table;
+	margin: auto;
+}
+
+.position {
+	background-color: brown;
+    
+	border-color: black;
+    color: white;
+	margin-bottom: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+	height: 100px;
+	width: 100px;
+}
+
+#button {
+	background-color: gray;
+    border: 1px, gray;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.wrapper {
+	text-align: center;
+}
