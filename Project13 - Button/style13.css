@@ -1,0 +1,66 @@
+h1 {
+	text-align: center;
+	font-size: 50px;
+}
+
+#counter {
+	font-size: 25px;
+	text-align: center;
+}
+#message {
+	font-size: 20px;
+	text-align: center;
+	font-family: cursive;
+}
+
+.container {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+	height: 300px;
+	width: 300px;
+}
+
+.container2 {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 450px;
+	
+	height: 100px;
+	width: 300px;
+}
+
+.equalsbutton {
+	background-color: blue;
+    border: 1px, gray;
+    color: white;
+    padding: 10px;
+	margin-left: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input:focus {
+	outline:0;
+}
+
+#pressedbutton {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	height: 300px;
+	width: 300px;
+	
+	border-radius: 150px;
+	background-color: blue;
+}
