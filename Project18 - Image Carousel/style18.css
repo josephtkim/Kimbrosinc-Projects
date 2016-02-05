@@ -1,0 +1,88 @@
+h1 {
+	text-align: center;
+	font-family: Helvetica;
+	color: #99ccff;
+}
+
+body {
+	background-color: white;
+}
+
+.carouselbody {
+	width: 640px;
+	height: 360px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0;
+	right: 0;
+	top: 80px;
+	
+	background-color: white;
+}
+
+#message {
+	font-size: 20px;
+	text-align: center;
+	font-family: Helvetica;
+	position: absolute;
+	top: 440px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0;
+	right: 0;
+}
+
+#scroll-right {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	
+	right: 0px;
+	top: 100px;
+	
+	height: 150px;
+	width: 50px;
+	background-color: white;
+}
+
+#scroll-left {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0px;
+	top: 100px;
+	
+	height: 150px;
+	width: 50px;
+	background-color: white;
+}
+
+#scroll-auto {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0;
+	right: 0;
+	top: 370px;
+	
+	height: 36px;
+	width: 150px;
+	background-color: white;
+}
+
+.button-container {
+	height: 360px;
+	width: 770px;
+	background-color: white;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	
+	left: 0;
+	right: 0;
+}
