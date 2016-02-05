@@ -1,0 +1,106 @@
+h1 {
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	font-family: arial;
+}
+
+body {
+	background-color: black;	
+}
+
+.holdcanvas {
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 60px;
+}
+
+.canvas {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+}
+
+.container {
+	height: 500px;
+	width: 970px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+#Currentname {
+	width: 200px;
+	height: 46px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 0px;
+	
+	font-size: 38px;
+	text-align: center;
+	
+	color: white;
+}
+
+.left {
+	width: 210px;
+	height: 410px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 6px;
+	
+	left: 4px;
+	top: 35px;
+		
+	border-radius: 30px;
+	background-color: white;
+}
+
+.right {
+	width: 210px;
+	height: 410px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 6px;
+	
+	right: 4px;
+	top: 35px;
+	
+	border-radius: 30px;
+	background-color: white;
+}
+
+#inputweight {
+	width: 93px;
+}
+#convert {
+	width: 65px;
+	height: 24px;
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 6px;
+}
+
+.bodybutton {
+	height: 50px;
+	width: 20px;
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 10px;
+	outline: 0;
+}

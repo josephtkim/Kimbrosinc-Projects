@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style21.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
+	<script src="Project21.js"></script>
+	
+	<title>Gravity</title>
+  </head>
+  
+  <body>
+    <h1>GRAVITY</h1>
+	
+	<div class="container">
+	 
+	 <div class="holdcanvas">
+	  <div class="canvas">
+		<img id="curplanet">
+	  </div>
+	 </div>
+	      
+		  <div id="Currentname"></div>
+	
+		  <div class="Values">
+		   <div class="left">
+		    <br>
+			Input Weight (pounds): <input type="text" id="inputweight"></input>
+			<button type="submit" id="convert">Convert!</button>
+			
+			<br>
+			<br>
+			Weight on Earth: 
+			<br>
+			<input type="text" id="earth_kg" style="width: 93px;"></input> kg
+			<br>
+			<input type="text" id="earth_pounds" style="width: 93px;"></input> pounds
+			
+			<br>
+			<br>
+			Converted weight:
+			<br>
+			<input type="text" id="new_kg" style="width: 93px;"></input> kg
+			<br>
+			<input type="text" id="new_pounds" style="width: 93px;"></input> pounds
+			
+			<br>
+			<br>
+			Acceleration due to Gravity (Earth):
+			<br>
+			<input type="text" id="Earth_accel" style="width: 93px;"></input> m/s<sup>2</sup>
+			
+			<br>
+			<br>
+			Acceleration due to Gravity (Converted):
+			<br>
+			<input type="text" id="new_accel" style="width: 93px;"></input> m/s<sup>2</sup>
+		  </div>
+		
+		  <div class="right">
+		    <br>
+			Celestial Mass: 
+			<br>
+			<input type="text" id="planet_weight" style="width: 93px;"></input> x 10<sup>24</sup> kg
+			
+			<br>
+			<br>
+			Celestial Diameter: 
+			<br>
+			<input type="text" id="planet_diameter" style="width: 93px;"></input> km
+			
+			<br>
+			<br>
+			Length of day:&nbsp <input type="text" id="hours" style="width: 61px"></input> hours
+			<br>
+			Length of year:  <input type="text" id="days" style="width: 60px"></input> days
+			<br>
+			<br>
+			<button class="bodybutton" type="submit" id="Mercury" style="width: 65px">Mercury</button>
+			<button class="bodybutton" type="submit" id="Venus" style="width: 65px">Venus</button>
+			<button class="bodybutton" type="submit" id="Earth" style="width: 65px">Earth</button>
+			<button class="bodybutton" type="submit" id="Mars" style="width: 65px">Mars</button>
+			<button class="bodybutton" type="submit" id="Jupiter" style="width: 65px">Jupiter</button>
+			<button class="bodybutton" type="submit" id="Saturn" style="width: 65px">Saturn</button>
+			<button class="bodybutton" type="submit" id="Uranus" style="width: 65px">Uranus</button>
+			<button class="bodybutton" type="submit" id="Neptune" style="width: 65px">Neptune</button>
+			<button class="bodybutton" type="submit" id="Pluto" style="width: 65px">Pluto</button>
+			
+			<button class="bodybutton" type="submit" id="Sun" style="width: 65px">Sun</button>
+			<button class="bodybutton" type="submit" id="Moon" style="width: 65px">Moon</button>
+		  </div>
+	     </div>
+	  
+	</div>
+	
+	
+	
+  </body>
+
+</html> 
