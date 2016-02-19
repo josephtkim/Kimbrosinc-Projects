@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Initialize important things
 	var count = 0;
 	var gameover = 0;
 	var wincount = 0;
@@ -25,12 +28,14 @@ $(document).ready(function(){
 	document.getElementsByName('twenty-four')[0].value=0;
 	document.getElementsByName('twenty-five')[0].value=0;
 	
+	// Correct square click
 	$('.easysquare').click(function() {
 		if (gameover == 0) {
 			$(this).css("background-color", "#8c8c8c");	
 		};
 	});
 	
+	// Click on each square
 	$('#one').click(function() {
 		if(document.getElementsByName('one')[0].value=="0"){
 			document.getElementsByName('one')[0].value=1;
@@ -40,8 +45,7 @@ $(document).ready(function(){
 			alert("You win!");
 			gameover = 1;
 		};
-	});
-	
+	});	
 	$('#two').click(function() {
 		if(document.getElementsByName('two')[0].value=="0"){
 			document.getElementsByName('two')[0].value=1;
@@ -243,6 +247,7 @@ $(document).ready(function(){
 		};
 	});
 	
+	// Wrong square click
 	$('.easysquarew').click(function() {
 		if (gameover == 0) {
 			$(this).css("background-color", "black");
@@ -255,6 +260,7 @@ $(document).ready(function(){
 		};
 	});
 	
+	// Reload the game
 	$('#button').click(function(){
 		location.reload();
 	});
