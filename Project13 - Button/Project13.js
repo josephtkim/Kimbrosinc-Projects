@@ -1,3 +1,5 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
 	var count = 0;
 	var message = " ";

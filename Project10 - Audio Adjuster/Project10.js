@@ -3,6 +3,7 @@
 $(document).ready(function(){
 	var song = document.getElementById("song");	
 	
+	// Make the speed range work
 	$('#speedrange').click(function() {			
 		var speed = document.getElementById("speedrange").value / 100;
 		

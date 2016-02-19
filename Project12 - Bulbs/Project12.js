@@ -1,19 +1,23 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function() {
+	// Set vars for the corresponding bulb state images to show
 	var bulbon = "../Project12 - Bulbs/bulbon.jpg";
 	var bulboff = "../Project12 - Bulbs/bulboff.jpeg";
 	
+	// Initialize all bulb states to off
 	document.getElementById("light1").src = bulboff;
 	document.getElementById("light2").src = bulboff;
 	document.getElementById("light3").src = bulboff;
 	document.getElementById("light4").src = bulboff;
 	document.getElementById("light5").src = bulboff;
-	
 	var bulb1val = 0;
 	var bulb2val = 0;
 	var bulb3val = 0;
 	var bulb4val = 0;
 	var bulb5val = 0;
 		
+	// Make the switches work
 	$('#switch1').click(function(){
 		if (bulb1val === 0) {
 			bulb1val = 1;
@@ -75,6 +79,7 @@ $(document).ready(function() {
 		}
 	});
 
+	// Master switch toggles all the bulb states to their opposite state.
 	$('#master').click(function(){
 		if (bulb1val === 0) {
 			bulb1val = 1;

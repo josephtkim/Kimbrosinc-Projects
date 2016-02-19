@@ -1,16 +1,21 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Initialize the variables for the keyword and the message.
 	var key;
 	var message;
 	
+	// function to change the inputted char to the ASCII number value
 	function chartoa (character) {
 		return character.charCodeAt(0);
 	}
 	
+	// function to change the ASCII number value back to a character
 	function atochar (integer) {
 		return String.fromCharCode(integer);
 	}
 	
-	// encode the letter according to key letter
+	// encode the letter according to corresponding key word letter
 	function ashift (character, key) {
 		var valuemessage = chartoa(character);
 		var shift = chartoa(key);
@@ -50,6 +55,7 @@ $(document).ready(function(){
 		return this.substr(0, index) + character + this.substr(index+character.length);
 	}
 	
+	// function to encode a message given the key word
 	function encode(message, key){
 		key = key.toLowerCase();
 		var index;
@@ -74,6 +80,7 @@ $(document).ready(function(){
 		alert("The message after encoding is: " + encoded_message);
 	}
 	
+	// function to decode a message given the key word
 	function decode(message, key) {
 		key = key.toLowerCase();
 		var index;
@@ -97,6 +104,7 @@ $(document).ready(function(){
 		alert("The message after decoding is: " + decoded_message);
 	}
 	
+	// Make the buttons work
 	$('#encodebutton').click(function() {
 		message = document.getElementsByName('messageto')[0].value;
 		key = document.getElementsByName('keyencode')[0].value;
@@ -104,7 +112,6 @@ $(document).ready(function(){
 		var newmessage = encode(message, key);
 		document.getElementsByName('Encodedmessage')[0].value = newmessage;
 	});
-	
 	$('#decodebutton').click(function() {
 		message = document.getElementsByName('messagefrom')[0].value;
 		key = document.getElementsByName('keydecode')[0].value;
@@ -113,5 +120,4 @@ $(document).ready(function(){
 		document.getElementsByName('Decodedmessage')[0].value = decodedmessage;
 	});
 	
-
 })
