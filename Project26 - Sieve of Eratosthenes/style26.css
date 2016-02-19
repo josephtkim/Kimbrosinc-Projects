@@ -1,0 +1,87 @@
+h1 {
+	text-align: center;
+}
+
+#sievecontainer {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 200px;
+
+	#height: 100px;
+	#width: 100px;
+}
+
+.square {
+	width: 45px;
+	height: 45px;
+	display: inline-block;
+	background-color: #f2f2f2;
+	margin: 0px;
+	outline: 1px solid black;
+	float: left;
+	float: up;
+	font-size: 15px;	
+}
+
+h2 {
+	font-size: 15px;
+	padding-top: 2px;
+	text-align: center;
+}
+
+#buttoncontainer {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 65px;
+	
+	height: 110px;
+	width: 196px;
+}
+
+#generate {
+	top: 5px;
+	width: 50px;
+
+}
+
+#new {
+	height: 28px;
+	width: 90px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 27px;
+	
+	background-color: white;
+}
+
+#result {
+	width: 186px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	visibility: hidden;
+}
+
+#title {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 63px;
+	text-align: center;
+	visibility: hidden;
+}
