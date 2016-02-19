@@ -1,3 +1,7 @@
+/*
+	By Joseph Kim, 2016
+*/
+
 h1 {
 	font-size: 50px;
 	z-index: -1;
@@ -8,6 +12,7 @@ h1 {
 	padding-bottom: 40px;
 }
 
+/* Important parts of the calculator main body and frame */
 .calculatorbody {
 	text-align: center;
 	font-size: 30px;
@@ -18,13 +23,13 @@ h1 {
 	margin: auto;
 	background-color: #d3d3d3;
 }
-
 .screen {
 	width: 300px;
 	height: 70px;
 	margin: 0 auto;
 }
 
+/* The buttons on the calculator */
 .functionsbutton {
 	background-color: black;
     border: 1px, gray;
@@ -37,7 +42,6 @@ h1 {
     display: inline-block;
     font-size: 16px;
 }
-
 .numbutton {
 	background-color: red;
     border: 1px, gray;
@@ -49,7 +53,6 @@ h1 {
     display: inline-block;
     font-size: 16px;
 }
-
 .equalsbutton {
 	background-color: blue;
     border: 1px, gray;

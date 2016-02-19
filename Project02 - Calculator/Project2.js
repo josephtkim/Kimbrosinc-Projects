@@ -1,10 +1,12 @@
+/* By Joseph Kim, 2016 */
 $(document).ready(function(){
-
+	// Initialize important variables
 	var currentval = 0;
 	var val1 = 0;
 	var val2 = 0;
 	var func = "";
 
+	// Numerical buttons
 	$('#one').click(function() {
 		currentval = currentval*10 + 1;
 		document.getElementsByName('Calculation')[0].value=currentval;
@@ -59,8 +61,6 @@ $(document).ready(function(){
 		currentval = (currentval - (currentval % 10)) / 10;
 		document.getElementsByName('Calculation')[0].value=currentval;
 	});
-
-	
 	$('#divide').click(function() {
 		val1 = currentval;
 		currentval = 0;
@@ -89,6 +89,8 @@ $(document).ready(function(){
 		func = "add";
 		document.getElementsByName('Calculation')[0].value=0;
 	});
+	
+	// Determine the calculation value to show from the chosen function
 	$('#equals').click(function() {
 		switch(func) {
 			case "add":

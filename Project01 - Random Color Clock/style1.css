@@ -1,4 +1,6 @@
-/* Joseph Kim 2016 */
+/*
+	By Joseph Kim, 2016
+*/
 
 h1 {
 	font-size: 50px;
@@ -6,9 +8,6 @@ h1 {
 	position: absolute;
 	width: 100%;
 	text-align: center;
-}
-
-body {
 }
 
 .date {
