@@ -1,3 +1,7 @@
+/*
+	By Joseph Kim, 2016
+*/
+
 h1 {
 	font-size: 50px;
 	color: black;
@@ -14,9 +18,6 @@ h1 {
 	margin-right: auto;
 	left: 0;
 	right: 0;
-}
-
-body {
 }
 
 .boardart {

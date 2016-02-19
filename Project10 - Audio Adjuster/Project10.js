@@ -1,3 +1,5 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
 	var song = document.getElementById("song");	
 	
@@ -7,5 +9,4 @@ $(document).ready(function(){
 		song.playbackRate = speed;
 		document.getElementsByName('displayspeed')[0].value = speed;
 	})
-	
 })

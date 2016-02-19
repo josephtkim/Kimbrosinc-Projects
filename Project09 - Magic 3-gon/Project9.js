@@ -1,5 +1,7 @@
-$(document).ready(function() {
+/* By Joseph Kim, 2016 */
 
+$(document).ready(function() {
+	// Check the inputted numbers in the Magic 3-gon
 	$('#checkbutton').click(function() {
 		var value1 = document.getElementsByName('value1')[0].value;
 		var value2 = document.getElementsByName('value2')[0].value;
@@ -12,6 +14,7 @@ $(document).ready(function() {
 		var sum2 = parseInt(value4) + parseInt(value3) + parseInt(value2);
 		var sum3 = parseInt(value3) + parseInt(value1) + parseInt(value5);
 		
+		// Determine if correct
 		if (((value1 > 0 && value1 <= 6) && (value2 > 0 && value2 <= 6) && (value3 > 0 && value3 <= 6) && (value4 > 0 && value4 <= 6) && (value5 > 0 && value5 <= 6) && (value6 > 0 && value6 <= 6)) &&
 			((value1 != value2 && value1 != value3 && value1 != value4 && value1 != value5 && value1 != value6) &&
 			(value2 != value3 && value2 != value4 && value2 != value5 && value2 != value6)                     &&
@@ -23,7 +26,7 @@ $(document).ready(function() {
 			{
 				alert("SOLVED!");
 			}
-		else {			
+		else {
 			alert("Not quite. Try again.");
 		}
 	});

@@ -1,7 +1,11 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Initialize some stuff
 	var colorsrow1 = [0, 1, 2, 3];
 	var colorsrow2 = [4, 5, 6, 7];
-
+	
+	// Randomly choose the 4 numbers for the answer
 	var number1 = Math.floor((Math.random() * 8));
 	var number2 = Math.floor((Math.random() * 8));
 	var number3 = Math.floor((Math.random() * 8));
@@ -13,6 +17,7 @@ $(document).ready(function(){
 	answer.push(number3);
 	answer.push(number4);
 	
+	// Images to show
 	var red = "../Project8 - Mastermind/redcircle.png";
 	var orange = "../Project8 - Mastermind/orangecircle.png";
 	var yellow = "../Project8 - Mastermind/yellowcircle.png";
@@ -37,16 +42,14 @@ $(document).ready(function(){
 	var R = "../Project8 - Mastermind/R.png";
 	var W = "../Project8 - Mastermind/W.png";
 	
-	var guess = [];
-	
+	var guess = [];	
 	var rownumber = 1;
 	var circlecount = 0;
-	
 	var gameover = 0;
 	
+	////////////////////////////////// FUNCTIONS //////////////////////////////////
 	function numbertocolor(number) {
-		var color;
-		
+		var color;		
 		switch(number) {
 			case 0:
 				color = red;
@@ -72,8 +75,7 @@ $(document).ready(function(){
 			case 7:
 				color = gray;
 			break;			
-		} 
-		
+		} 		
 		return color;
 	}
 	
@@ -872,6 +874,7 @@ $(document).ready(function(){
 		eval = [0,0,0,0];
 	}
 	
+	// Buttons
 	$('#clearbutton').click(function(){
 		if (gameover == 0) {
 			clearguess(guess);
@@ -890,7 +893,6 @@ $(document).ready(function(){
 				{
 					clearguess(guess);
 				}
-				
 				circlecount = 0;
 				rownumber += 1;
 			}

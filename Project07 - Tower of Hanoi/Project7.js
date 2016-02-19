@@ -1,10 +1,11 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set up some variables
 	var col1 = [5, 4, 3, 2, 1];
 	var col2 = [];
 	var col3 = [];
-	
 	var length1 = col1.length - 1;
-	
 	var gameover = 0;
 	
 	// set values
@@ -311,10 +312,8 @@ $(document).ready(function(){
 	};
 	
 	////////////////////////////////// FUNCTIONS END ////////////////////////////////
-	// Click some block and then click the pole to transfer
-	
+	// Click some block and then click the pole to move it
 	$('.pole1').click(function() {
-	
 		if (currentblockvalue > 0 && gameover == 0) {
 			secondcolval = 1;
 			
@@ -351,11 +350,9 @@ $(document).ready(function(){
 				alert("YOU WIN!");
 				gameover = 1;
 			};
-		};
-		
+		};		
 	});
-	$('.pole2').click(function() {
-		
+	$('.pole2').click(function() {		
 		if (currentblockvalue > 0 && gameover == 0) {
 			secondcolval = 2;	
 			
@@ -454,7 +451,7 @@ $(document).ready(function(){
 		};
 	});
 	
-	
+	// Restart button
 	$('#button').click(function(){
 		location.reload();
 	});

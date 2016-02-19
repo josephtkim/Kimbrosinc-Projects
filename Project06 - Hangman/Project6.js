@@ -1,22 +1,24 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// All the words that could show up
 	var words = ["music", "kitten", "person", "magenta", "javascript", "programming", "hypertext", "videogame", "harmony", "language"];
 	
+	// Setting up some variables
 	var number = Math.floor((Math.random() * 10));
 	var answer = words[number];
-	var length = answer.length;
-	
+	var length = answer.length;	
 	var strikes = 0;
 	var correct = 0;
-	var gameover = 0;
-	
-	var guesses = [];
-	
+	var gameover = 0;	
+	var guesses = [];	
 	var letterinword = 0;
 	
 	var $grid = $('#grid');
 	var $grid2 = $('#grid2');
 	var $grid3 = $('#grid3');
 	
+	// Check if letter is in the word
 	function isInArray(value, array) {
 		return array.indexOf(value) > -1;
 	};
@@ -30,6 +32,7 @@ $(document).ready(function(){
 	
 	var elementname = "";
 	
+	// Submit the guess
 	$('#submission').click(function(){
 		var letter = document.getElementsByName('guess')[0].value.toLowerCase();
 		document.getElementsByName('guess')[0].value = "";
@@ -58,16 +61,17 @@ $(document).ready(function(){
 		
 		var temprow;
 		
+		// Check if you win or lose
 		if ((strikes == 7) && (gameover == 0)) {
 			alert("GAME OVER!");
 			gameover = 1;
-		};
-		
+		};		
 		if ((correct == length) && (gameover == 0)) {
 			alert("YOU WIN!");
 			gameover = 1;
 		};	
 		
+		// Draw the appropriate image for the game
 		if (strikes == 1) {
 			document.getElementById("hanged").src="../Project6 - Hangman/hang1.png";
 		}
@@ -90,8 +94,7 @@ $(document).ready(function(){
 			document.getElementById("hanged").src="../Project6 - Hangman/hang7.png";
 		}
 	});
-	
-	
+		
 	$('#button').click(function(){
 		location.reload();
 	});
