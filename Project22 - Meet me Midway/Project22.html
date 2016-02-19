@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style22.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="Project22.js"></script>
+	
+	   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1><em>M</em>eet <em>M</em>e <em>M</em>idway</h1>
+    
+	 <div class="buttoncontainer">
+	 
+	   <div class="location1">
+  		Location 1: <input id="address1" type="textbox"></input>
+					 <input id="address1lat" type="hidden" value="39.397"></input>
+					 <input id="address1lng" type="hidden" value="-96.244"></input>
+	  </div>
+  &nbsp &nbsp
+       <div class="location2">
+		Location 2: <input id="address2" type="textbox"></input>
+					 <input id="address2lat" type="hidden" value="39.397"></input>
+					 <input id="address2lng" type="hidden" value="-96.244"></input>
+	  </div>
+	  
+		<br>
+		<br>
+       
+		<input id="submit" type="hidden" value="Geocode">
+		
+		<div class="submitaddresses">
+			<input id="midway_submit" type="button" value="Submit Addresses">
+		</div>
+		<div class="midwaybutton">
+			<input id="compute" type="button" value="Meet Midway!">		
+		</div>
+     </div>
+  
+    <div class="mapcontainer">
+		<div id="map"></div>
+	</div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp5W3UwF8r5KlT07zcBxNPFM7osQIzkt0&signed_in=true&callback=initMap"
+        async defer></script>
+  </body>
+</html>
