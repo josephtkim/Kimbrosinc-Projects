@@ -1,9 +1,12 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set up the canvas
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
-	
 	var color = "white";
-			
+	
+	// Change color of the clockface when clicked
 	$(".clockface").click(function(){
 		color = '#' + (Math.random()*0xFFFFFF<<0).toString(16);
 	});
@@ -12,12 +15,14 @@ $(document).ready(function(){
 	ctx.translate(radius, radius);
 	setInterval(drawClock, 20);
 	
+	// function to draw the entire clock
 	function drawClock(){
 		drawFace(ctx, radius);
 		drawNumbers(ctx, radius);
 		drawTime(ctx, radius);
 	}
 	
+	// draw the clock face
 	function drawFace(ctx, radius) {
 		ctx.beginPath();
 		ctx.arc(0, 0, radius, 0, 2*Math.PI);
@@ -30,6 +35,7 @@ $(document).ready(function(){
 		ctx.fill();
 	}
 	
+	// draw the numbers on the clock face
 	function drawNumbers(ctx, radius) {
 		var ang;
 		var num;
@@ -49,6 +55,7 @@ $(document).ready(function(){
 		}
 	}
 	
+	// Draw the current time
 	function drawTime(ctx, radius) {
 		var now = new Date();
 		var hour = now.getHours();
@@ -66,6 +73,7 @@ $(document).ready(function(){
 		drawHand(ctx, second, radius*0.9, radius*0.01);
 	}
 	
+	// Draw the clock hands
 	function drawHand(ctx, pos, length, width) {
 		ctx.beginPath();
 		ctx.lineWidth = width;
@@ -76,5 +84,4 @@ $(document).ready(function(){
 		ctx.stroke();
 		ctx.rotate(-pos);
 	}
-	
 })

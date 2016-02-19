@@ -1,10 +1,14 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
 	// Thanks to Matt Mongeau of thoughtbot.com for the skeleton with which to build this game. 
-	// Much credit goes to him for making this game
-	
+
+	// Set up animate
 	var animate = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
 			window.setTimeout(callback, 1000 / 60)
 		};
+		
+	// Set all the important variables
 	var canvas = document.getElementById("myCanvas");
 	var width = 700;
 	var height = 400;
@@ -14,15 +18,12 @@ $(document).ready(function(){
 	var player = new Player();
 	var computer = new Computer();
 	var ball = new Ball(355, 200);
-	
 	var player1Score = 0;
 	var player2Score = 0;
-	
 	var sound1 = new Audio("../Project14 - Pong/beep.wav");
-
-
 	var keysDown = {};
 
+	// Display the current score
 	function drawScore() {	
 		context.font = "30px Copperplate";
 		context.fillText(player1Score, 200, 40);
@@ -35,6 +36,7 @@ $(document).ready(function(){
 		}
 	}
 
+	// render everything
 	var render = function () {
 		context.fillStyle = "black";
 		context.fillRect(0, 0, width, height);
@@ -44,18 +46,21 @@ $(document).ready(function(){
 		drawScore();
 	};
 
+	// update player, ball and computer paddle
 	var update = function () {
 		player.update();
 		computer.update(ball);
 		ball.update(player.paddle, computer.paddle);
 	};
 
+	// step
 	var step = function () {
 		update();
 		render();
 		animate(step);
 	};
 
+	// Create the paddle
 	function Paddle(x, y, width, height) {
 		this.x = x;
 		this.y = y;
@@ -65,11 +70,13 @@ $(document).ready(function(){
 		this.y_speed = 0;
 	}
 
+	// render the paddle onto the canvas
 	Paddle.prototype.render = function () {
 		context.fillStyle = "white";
 		context.fillRect(this.x, this.y, this.width, this.height);
 	};
 
+	// Moving the paddle 
 	Paddle.prototype.move = function (x, y) {
 		this.x += x;
 		this.y += y;
@@ -83,15 +90,18 @@ $(document).ready(function(){
 			this.y_speed = 0;
 		}
 	};
-	//////////////////////////////////////////
+
+	// create computer player
 	function Computer() {
 		this.paddle = new Paddle(680, 170, 10, 60);
 	}
-	//////////////////////////////////////////
+	
+	// render the computer paddle
 	Computer.prototype.render = function () {
 		this.paddle.render();
 	};
-	//////////////////////////////////////////
+	
+	// Update the computer paddle
 	Computer.prototype.update = function (ball) {
 		var y_pos = ball.y;
 		var diff = -((this.paddle.y + (this.paddle.height / 2)) - y_pos);
@@ -107,7 +117,8 @@ $(document).ready(function(){
 			this.paddle.y = height - this.paddle.height;
 		}
 	};
-	//////////////////////////////////////////
+	
+	// creating the player
 	function Player() {
 		this.paddle = new Paddle(10, 170, 10, 60);
 	}
@@ -115,7 +126,8 @@ $(document).ready(function(){
 	Player.prototype.render = function () {
 		this.paddle.render();
 	};
-	//////////////////////////////////////////
+	
+	// updating the player
 	Player.prototype.update = function () {
 		for (var key in keysDown) {
 			var value = Number(key);
@@ -128,21 +140,24 @@ $(document).ready(function(){
 			}
 		}
 	};
-	//////////////////////////////////////////
+	
+	// creating a ball
 	function Ball(x, y) {
 		this.x = x;
 		this.y = y;
 		this.x_speed = -3;
 		this.y_speed = 0;
 	}
-	//////////////////////////////////////////
+	
+	// rendering the ball
 	Ball.prototype.render = function () {
 		context.beginPath();
 		context.arc(this.x, this.y, 5, 2 * Math.PI, false);
 		context.fillStyle = "white";
 		context.fill();
 	};
-	//////////////////////////////////////////
+	
+	// updating the ball based on the positions of both players
 	Ball.prototype.update = function (paddle1, paddle2) {
 		this.x += this.x_speed;
 		this.y += this.y_speed;
@@ -191,16 +206,15 @@ $(document).ready(function(){
 		}
 	};
 
+	// start it up
 	document.body.appendChild(canvas);
 	animate(step);
 
+	// add the key event listeners
 	window.addEventListener("keydown", function (event) {
 		keysDown[event.keyCode] = true;
 	});
-
 	window.addEventListener("keyup", function (event) {
 		delete keysDown[event.keyCode];
 	});
-
-	
 });

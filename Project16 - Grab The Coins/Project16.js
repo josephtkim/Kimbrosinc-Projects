@@ -1,8 +1,10 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set up everything
 	var animate = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
 			window.setTimeout(callback, 1000 / 60)
 		};
-		
 	var canvas = document.getElementById("myCanvas");
 	var width = 700;
 	var height = 400;
@@ -16,6 +18,7 @@ $(document).ready(function(){
 	
 	var sound1 = new Audio("../Project16 - Grab The Coins/coingrab.wav");
 	
+	// Create the objects to grab. Just named ball for now. 
 	var ball = new Ball(10, 200);
 	var ball2 = new Ball(115, 200);
 	var ball3 = new Ball(220, 200);
@@ -32,15 +35,14 @@ $(document).ready(function(){
 	var ball13 = new Ball(535, 100);
 	var ball14 = new Ball(640, 100);
 
+	// Ball functions
 	function Ball(x, y) {
 		this.x = x;
 		this.y = y;
-	}
-	
+	}	
 	Ball.prototype.render = function () {
 		context.drawImage(base_image, this.x, this.y)
-	};
-	
+	};	
 	Ball.prototype.update = function (paddle1) {
 		var top_x = this.x - 5;
 		var top_y = this.y - 5;
@@ -56,6 +58,7 @@ $(document).ready(function(){
 
 	var keysDown = {};
 
+	// Render and update everything
 	var render = function () {
 		context.fillStyle = "white";
 		context.fillRect(0, 0, width, height);
@@ -75,7 +78,6 @@ $(document).ready(function(){
 		ball14.render();
 		player.render();
 	};
-
 	var update = function () {
 		player.update();
 		ball.update(player.paddle);
@@ -93,13 +95,13 @@ $(document).ready(function(){
 		ball13.update(player.paddle);
 		ball14.update(player.paddle);
 	};
-
 	var step = function () {
 		update();
 		render();
 		animate(step);
 	};
 
+	// The paddle functions
 	function Paddle(x, y, width, height) {
 		this.x = x;
 		this.y = y;
@@ -108,12 +110,10 @@ $(document).ready(function(){
 		this.x_speed = 0;
 		this.y_speed = 0;
 	};
-
 	Paddle.prototype.render = function () {
 		context.fillStyle = "red";
 		context.fillRect(this.x, this.y, this.width, this.height);
 	};
-
 	Paddle.prototype.move = function (x, y) {
 		this.x += x;
 		this.y += y;
@@ -135,15 +135,13 @@ $(document).ready(function(){
 		} 
 	};
 	
+	// create and update the player paddle
 	function Player() {
 		this.paddle = new Paddle(20, 335, 40, 60);
 	}
-
 	Player.prototype.render = function () {
 		this.paddle.render();
-	};
-	
-	// Player movement control
+	};	
 	Player.prototype.update = function () {
 		for (var key in keysDown) {
 			var value = Number(key);
@@ -162,14 +160,13 @@ $(document).ready(function(){
 		this.paddle.move(0, 4);
 	};
 
-
+	// Start it up and add event listeners
 	document.body.appendChild(canvas);
 	animate(step);
 
 	window.addEventListener("keydown", function (event) {
 		keysDown[event.keyCode] = true;
 	});
-
 	window.addEventListener("keyup", function (event) {
 		delete keysDown[event.keyCode];
 	});

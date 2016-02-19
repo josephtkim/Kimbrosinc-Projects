@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set the variables shown in the game
 	var stats = [];
 	var level = 1;
 	var curhealth = 100;
@@ -18,6 +21,7 @@ $(document).ready(function(){
 	var cube = "../Project23 - RPG/cube.png"
 	var prism = "../Project23 - RPG/prism.png";
 	
+	// update the player stats
 	function updatestats(){		
 		document.getElementById('level').innerHTML = String(level);
 		if (curhealth >= 0){
@@ -32,10 +36,12 @@ $(document).ready(function(){
 	}
     updatestats();
 	
+	// Change the next button to attack
 	function fightbuttons() {
 		document.getElementById('button1').innerHTML = "ATTACK";
 	}
 				
+	// Go through the story
 	$('#button1').click(function(){
 		if (begin === 1){
 			document.getElementById('words').innerHTML = "You appear on a field somewhere in Kimbrosia, the land of dreams.";

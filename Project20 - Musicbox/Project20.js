@@ -1,7 +1,11 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set up the canvas
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
 	
+	// Get each note's sound
 	var note1 = new Audio("../Project20 - Musicbox/noteA.wav");
 	var note2 = new Audio("../Project20 - Musicbox/noteB.wav");
 	var note3 = new Audio("../Project20 - Musicbox/noteC.wav");
@@ -12,6 +16,7 @@ $(document).ready(function(){
 	
 	var notes = [note1, note2, note3, note4, note5, note6, note7];
 	
+	// Set up each column in the sheet
 	var column0 = [0,0,0,0,0,0,0];
 	var column1 = [0,0,0,0,0,0,0];
 	var column2 = [0,0,0,0,0,0,0];
@@ -51,7 +56,7 @@ $(document).ready(function(){
 			ctx.stroke();
 		}
 	}
-	//////////////////////////////////
+
 	// Create the note positions
 	var $grid = $('#blocks');
 	var columns = 16;
@@ -69,12 +74,10 @@ $(document).ready(function(){
 	}
 	
 	var curcol;
-	/////////////////////////////////	
+	
+	// Add the note when clicking the sheet
 	$(".block").click(function(){
 		(this).style.backgroundColor = "black";
-		//(this).value = "on"; // This needs to be checked whether to play the note
-		//alert((this).className);
-		//alert((this).title); // Use this to determine row and column coordinates
 		
 		if ((this).className === "block row0") {
 			note1.play();
@@ -449,11 +452,13 @@ $(document).ready(function(){
 		}
 	})
 
+	// Draw the moving line
 	function drawWave(){
 		drawTime(ctx);
 	}
 
-	function playNotes() { // TODO: Get the right intervals and the correct determination for which notes to play
+	// Play the notes depending on the location of the moving ticker
+	function playNotes() { 
 		// column 1
 		if (x*100 >= 0 && x*100 <= 1) {
 			for (var i = 0; i < 7; i++) {
@@ -583,11 +588,11 @@ $(document).ready(function(){
 			}
 		}
 	}
-		
+	
+	// Draw the moving line
 	function drawTime(ctx) {
 		drawDot(ctx);
-	}
-	
+	}	
 	function drawDot(ctx) {
 		playNotes();
 		ctx.lineWidth=1;
@@ -607,48 +612,16 @@ $(document).ready(function(){
 		drawLines();
 	}
 	
-	
 	// Start the program!
 	drawWave();
 	
+	// Play the music 
 	$("#play").click(function(){
 		setInterval(drawWave, 8);
 	});
 	
+	// Play from the beginning
 	$('#reset').click(function(){
 		x = 0;
 	});
-		
-	///////////////////////////////////////////////
-	/*
-	//For adding the timer back paste to HTML
-	<div id="time">Time:</div>
-	<label id="minutes">00</label>:<label id="seconds">00</label>
-    <script type="text/javascript">
-        var minutesLabel = document.getElementById("minutes");
-        var secondsLabel = document.getElementById("seconds");
-        var totalSeconds = 0;
-        setInterval(setTime, 1000);
-
-        function setTime()
-        {
-            ++totalSeconds;
-            secondsLabel.innerHTML = pad(totalSeconds%60);
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
-        }
-
-        function pad(val)
-        {
-            var valString = val + "";
-            if(valString.length < 2)
-            {
-                return "0" + valString;
-            }
-            else
-            {
-                return valString;
-            }
-        }
-    </script>
-	*/
 })

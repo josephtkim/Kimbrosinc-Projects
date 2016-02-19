@@ -1,3 +1,5 @@
+/* By Joseph Kim, 2016 */
+
 .draggable{
 	position:absolute;
 
@@ -17,9 +19,6 @@ h1 {
 h2 {
 	text-align: center;
 	font-size: 10px;
-}
-
-body {
 }
 
 #message {

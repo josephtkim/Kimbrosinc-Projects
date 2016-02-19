@@ -1,8 +1,11 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){		
 	// canvas objects
 	var canvas = document.getElementById("canvas"),
 	    context = canvas.getContext('2d');	
 	
+	// Start the snake body as 3 segments, each 10 pixels long
 	var segment = 10,
 		snakebody = [{x: 10, y: 30}, {x: 20, y: 30}, {x: 30, y: 30}];
 	
@@ -11,6 +14,7 @@ $(document).ready(function(){
 	    foodx = 0,
 		foody = 0;
 
+	// More important variables
 	var speed = 10,
 	    score = 0,
 		intervals = 200,
@@ -27,13 +31,14 @@ $(document).ready(function(){
 		}
 	}
 	
-	// draw the snake
+	// Fill each part of the snake
 	function fillsnake() {
 		for (var i = 0; i < snakebody.length; i++) {
 			context.fillRect(snakebody[i].x, snakebody[i].y, segment, segment);
 		}
 	}
 	
+	// Draw the snake 
 	function drawsnake() {
 		if (direction === "right") {
 			shiftsnake();
@@ -84,6 +89,7 @@ $(document).ready(function(){
 		}
 	}
 	
+	// Draw the food somewhere randomly on the canvas
 	function drawfood() {
 		if (foodcheck === 0) {
 			foodx = Math.floor((Math.random() * 430) + 1);
@@ -121,6 +127,7 @@ $(document).ready(function(){
 		start = setInterval(update, intervals);
 	}
 	
+	// Speed up the game each time food is eaten
 	function speedup() {
 		clearInterval(start);
 		if (intervals > 60) {
@@ -129,6 +136,7 @@ $(document).ready(function(){
 		start = setInterval(update, intervals);
 	}
 	
+	// Check the key pressed
 	$(document).on('keydown', function(event) {
 		var key = event.keyCode;
 		
@@ -148,16 +156,15 @@ $(document).ready(function(){
 			setTimeout(function() {
 				direction = "right";
 			}, 30);
-		}
-		
+		}		
 		event.preventDefault();
 	})
 	
+	// New game and start game buttons
 	$("#newgame").click(function(){
 		newgame();
 		document.getElementById("newgame").style.visibility = "hidden";
-	})
-	
+	})	
 	$("#startgame").click(function() {
 		start = setInterval(update, intervals);
 		document.getElementById("startgame").style.visibility = "hidden";

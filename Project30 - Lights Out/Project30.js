@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set some important variables
 	var cols,
 		rows,
 		col,
@@ -108,9 +111,7 @@ $(document).ready(function(){
 			switchlights((this).id, cols, rows);
 		}
 	})
-	
 	$("#newgame").click(function() {
 			location.reload();
 	})
-	
 })

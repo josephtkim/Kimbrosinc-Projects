@@ -1,3 +1,5 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function() {
 	// Thanks to William Malone for the tutorial to make this work
 	var canvas = document.getElementById("Canvas");
@@ -53,6 +55,7 @@ $(document).ready(function() {
 		clickDrag.push(dragging);
 	}
 	
+	// Change the color of the writing
 	$("#Black").click(function(){
 		color = "black";
 		updateCanvas();
@@ -95,6 +98,7 @@ $(document).ready(function() {
 		updateCanvas();
 	})
 	
+	// Clear the canvas
 	$("#Clear").click(function(){
 		clickX = new Array();
 		clickY = new Array();
@@ -102,7 +106,7 @@ $(document).ready(function() {
 		updateCanvas();
 	})
 	
-	// Magic
+	// Make the program work
 	function updateCanvas() {
 		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 		

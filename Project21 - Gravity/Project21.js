@@ -1,7 +1,8 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){	
-	// Acceleration due to Gravity values	
+	// Accelerations due to Gravity values
 	var Earth = 9.81;
-	
 	var Mercury = 3.59 / Earth;
 	var Venus = 8.87 / Earth;
 	var Earthratio = 9.81 / Earth;
@@ -14,14 +15,12 @@ $(document).ready(function(){
 	var Sun = 274.13 / Earth;
 	var Moon = 1.62 / Earth;
  	
-	// Arrays to hold all values
+	// Arrays to hold important values
 	var ratios = [Mercury, Venus, Earthratio, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Sun, Moon];
 	var planet = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Sun", "Moon"];
 	var accels = [3.59, 8.87, 9.81, 3.77, 25.95, 11.08, 10.67, 14.07, 0.42, 274.13, 1.62];
 	var masses = [0.330, 4.87, 5.97, 0.642, 1898, 568, 86.8, 102, 0.0146, 1989000, 0.073];
-	
 	var diameters = [4879, 12104, 12756, 6792, 142984, 120536, 51118, 49528, 2370, 1392000, 3475];
-	
 	var hours = [1408, 5832, 24, 25, 10, 11, 17, 16, 153, "N/A", 656];
 	var days = [87.97, 224.70, 365.26, 686.98, 4332.82, 10755.7, 30687.15, 60190.03, 90474.9, "N/A", "N/A"];
 
@@ -35,10 +34,8 @@ $(document).ready(function(){
 	var planet7 = "../Project21 - Gravity/uranus.png";
 	var planet8= "../Project21 - Gravity/neptune.png";
 	var planet9 = "../Project21 - Gravity/pluto.png";
-	
 	var planet10 = "../Project21 - Gravity/sun.png";
 	var planet11 = "../Project21 - Gravity/moon.png";
-	
 	var images = [planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8, planet9, planet10, planet11];
 	
 	var currentpounds = 0;
@@ -63,12 +60,12 @@ $(document).ready(function(){
 	document.getElementById('planet_weight').value=planetmass;
 	
 	var convertedaccel;
-	
 	var planetmass;
 	var planetdiameter;
 	var planethours;
 	var planetdays;
 	
+	// Convert the values to the new heavenly body
 	$("#convert").click(function(){
 		currentpounds = document.getElementById('inputweight').value;
 		currentkg = currentpounds * 0.4536;
@@ -80,8 +77,9 @@ $(document).ready(function(){
 		document.getElementById('earth_kg').value=currentkg;					
 		document.getElementById('new_kg').value=convertedkg;
 		document.getElementById('new_pounds').value=convertedpounds;		
-	})
+	})	
 	
+	// For each planetary body
 	$("#Mercury").click(function(){
 		curbody = 0;
 		
@@ -391,8 +389,5 @@ $(document).ready(function(){
 		document.getElementById('earth_kg').value=currentkg;					
 		document.getElementById('new_kg').value=convertedkg;
 		document.getElementById('new_pounds').value=convertedpounds;	
-	})
-	
-	
-		
+	})	
 })

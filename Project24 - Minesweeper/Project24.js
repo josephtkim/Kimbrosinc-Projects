@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){	
+	// Set some variables to be used
 	var Ecols = 8;
 	var Erows = 8;
 	var Emines = 10;
@@ -16,6 +19,7 @@ $(document).ready(function(){
 	
 	var gameover = 0;
 	
+	// create a function to generate a new game playing field 
 	function newGame(cols, rows, mines) {
 		curcols = cols;
 		currows = rows;
@@ -28,6 +32,7 @@ $(document).ready(function(){
 	var positions = [];
 	var positioncode = [];
 	
+	// Determine the positions of the mines
 	function minepositions(cols, rows, mines) {
 		var cols = cols;
 		var rows = rows;		
@@ -78,6 +83,7 @@ $(document).ready(function(){
 	
 	var blockval = [];
 	
+	// Initialize the values for the squares as a matrix
 	function createblocksval(cols, rows){
 		var row = [];
 		blockval = [];
@@ -92,6 +98,7 @@ $(document).ready(function(){
 		return blockval;
 	}
 	
+	// Determine the square numbers based on the adjacent squares
 	function blockvalues(positioncode, cols, rows) {
 		var blockval = createblocksval(cols, rows);
 		
@@ -129,6 +136,7 @@ $(document).ready(function(){
 	
 	var cleared = [];
 	
+	// Check if game is over 
 	function gameovercheck() {
 		if ((cleared.length === (currows * curcols - curmines)) && gameover === 0) {
 			document.getElementById('smilestatebutton').style.backgroundImage = "url('beatgame.png')";
@@ -255,27 +263,25 @@ $(document).ready(function(){
 		}
 		
 		for (var i = 0; i < adjacents.length; i++){
-			//if (document.getElementById(adjacents[i]).value >= 0) {
-				if (document.getElementById(adjacents[i]).value === "0") {
-					document.getElementById(adjacents[i]).style.backgroundColor = "lightgray";
-					document.getElementById(adjacents[i]).style.border = "none";
-					if (cleared.indexOf(adjacents[i]) < 0) {
-						cleared.push(adjacents[i]);
-					}
+			if (document.getElementById(adjacents[i]).value === "0") {
+				document.getElementById(adjacents[i]).style.backgroundColor = "lightgray";
+				document.getElementById(adjacents[i]).style.border = "none";
+				if (cleared.indexOf(adjacents[i]) < 0) {
+					cleared.push(adjacents[i]);
 				}
-				else {
-					document.getElementById(adjacents[i]).innerHTML = document.getElementById(adjacents[i]).value;
-					document.getElementById(adjacents[i]).style.backgroundColor = "lightgray";
-					document.getElementById(adjacents[i]).style.border = "none";
-					if (cleared.indexOf(adjacents[i]) < 0) {
-						cleared.push(adjacents[i]);
-					}
+			}
+			else {
+				document.getElementById(adjacents[i]).innerHTML = document.getElementById(adjacents[i]).value;
+				document.getElementById(adjacents[i]).style.backgroundColor = "lightgray";
+				document.getElementById(adjacents[i]).style.border = "none";
+				if (cleared.indexOf(adjacents[i]) < 0) {
+					cleared.push(adjacents[i]);
 				}
-				if (document.getElementById(adjacents[i]).value === "0" && tocheck.indexOf(adjacents[i]) < 0) {
-					tocheck.push(adjacents[i]);
-					showadjacents(adjacents[i], cols, rows);
-				}
-			//}
+			}
+			if (document.getElementById(adjacents[i]).value === "0" && tocheck.indexOf(adjacents[i]) < 0) {
+				tocheck.push(adjacents[i]);
+				showadjacents(adjacents[i], cols, rows);
+			}
 		}
 
 	}
@@ -286,10 +292,9 @@ $(document).ready(function(){
 			tocheck.pop();
 		}
 	}
-		
+	
 	function checkads() {
 		for (var j = 0; j < tocheck.length; j++) {
-			//alert("checking" + tocheck[j]);
 			showadjacents(tocheck[j], cols, rows);
 		}
 	}
@@ -370,6 +375,7 @@ $(document).ready(function(){
 		location.reload();
 	})
 	
+	// Check what wss clicked, a square or mine
 	$('.square').click(function(){
 		if(gameover === 0){			
 			if ((this).value === "0") {
@@ -393,10 +399,8 @@ $(document).ready(function(){
 			}
 		}
 		gameovercheck();
-	})
-						
-	$('.mine').click(function(){
-		//alert("mine pressed");
+	})						
+	$('.mine').click(function(){	
 		if(gameover === 0){			
 			var mines = document.getElementsByClassName('mine');
 			for (var i = 0, length = mines.length; i < length; i++) {
@@ -407,7 +411,7 @@ $(document).ready(function(){
 		}
 	})
 	
-	// while holding click on a square
+	// while holding click on a square the smiley shows surprise
 	$(".square").mousedown(function () {
 		if(gameover === 0){	
 			loopthis = setInterval(repeatingfunction, 100);
@@ -418,11 +422,9 @@ $(document).ready(function(){
 			document.getElementById('smilestatebutton').style.backgroundImage = "url('normal.png')";
 		}
 	});
-
 	function repeatingfunction() {
 		document.getElementById('smilestatebutton').style.backgroundImage = "url('clicking.png')";
 	}
-	
 	$(".mine").mousedown(function () {
 		if(gameover === 0){	
 			loopthis = setInterval(repeatingfunction, 100);
@@ -433,11 +435,10 @@ $(document).ready(function(){
 			document.getElementById('smilestatebutton').style.backgroundImage = "url('normal.png')";
 		}
 	});
-
 	function repeatingfunction() {
 		document.getElementById('smilestatebutton').style.backgroundImage = "url('clicking.png')";
 	}
-	///////////////////////////
+	
 	$("#minefield").mouseleave(function(){
 		if (gameover === 0) {
 			document.getElementById('smilestatebutton').style.backgroundImage = "url('normal.png')";
@@ -445,7 +446,7 @@ $(document).ready(function(){
 		}
 	})
 	
-	
+	// Place flag on mine
 	$(".mine").mousedown(function(ev){
       if(ev.which == 3)
       {
@@ -464,6 +465,7 @@ $(document).ready(function(){
       }
 	});
 	
+	// Right click to place flag
 	$(".square").mousedown(function(ev){
       if(ev.which == 3)
       {

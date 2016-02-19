@@ -1,3 +1,5 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
 	// Make this run smoove
 	var animate = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
@@ -31,7 +33,6 @@ $(document).ready(function(){
 	var player = new Player(), 			// Player
 		ball = new Ball(width/2, 240);  // Ball
 		
-	/////////////////////////////////////////////////////////////////////////////////////////	
 	//create the bricks	
 	var bricks = [];
 	
@@ -42,6 +43,7 @@ $(document).ready(function(){
 		}
 	}
 
+	// Draw the bricks 
 	function drawBricks() {
 		for (var i = 0; i < rows; i++) {
 			for (var j = 0; j < cols; j++) {
@@ -93,6 +95,7 @@ $(document).ready(function(){
 		}
 	}
 	
+	// Check if game is over
 	function gameovercheck() {
 		if (lives === 0) {
 			ball.y_speed = 0;
@@ -114,10 +117,7 @@ $(document).ready(function(){
 		
 	var keysDown = {};
 	
-	// TODO:
-	// Add lives and show amount remaining
-	// Gameover message, restart option
-	
+	// Draw the score 
 	function drawScore() {
 		context.font = "20px Copperplate";
 		context.fillText("Score: " + player1Score, 20, 39);
@@ -126,6 +126,7 @@ $(document).ready(function(){
 		context.fillRect(0, 65, width, 5);
 	};
 
+	// Functions that keep running
 	var render = function () {
 		context.fillStyle = "black";
 		context.fillRect(0, 0, width, height);
@@ -135,19 +136,17 @@ $(document).ready(function(){
 		gameovercheck();
 		drawBricks();
 	};
-
 	var update = function () {
 		player.update();
 		ball.update(player.paddle);
 	};
-
 	var step = function () {
 		update();
 		render();
 		animate(step);
 	};
 
-	
+	// Move the paddle 
 	Paddle.prototype.move = function (x, y) {
 		this.x += x;
 		this.y += y;
@@ -162,7 +161,7 @@ $(document).ready(function(){
 		}
 	};
 	
-	// Set up 
+	// Set up the player paddle
 	function Paddle(x, y, width, height) {
 		this.x = x;
 		this.y = y;
@@ -171,7 +170,6 @@ $(document).ready(function(){
 		this.x_speed = 0;
 		this.y_speed = 0;
 	}
-
 	function Player() {
 		this.paddle = new Paddle(width/2 - paddle_width/2, height - 20, paddle_width, paddle_height);
 	}	
@@ -197,6 +195,7 @@ $(document).ready(function(){
 		context.fill();
 	};
 	
+	// Update
 	Player.prototype.update = function () { // Player movement
 		for (var key in keysDown) {
 			var value = Number(key);
@@ -209,8 +208,6 @@ $(document).ready(function(){
 			}
 		}
 	};
-	
-	// update ball
 	Ball.prototype.update = function (paddle1) {
 		this.x += this.x_speed;
 		this.y += this.y_speed;
@@ -257,6 +254,7 @@ $(document).ready(function(){
 		delete keysDown[event.keyCode];
 	});
 	
+	// Start a new game
 	function newgame() {
 		lives = 5;
 		player1Score = 0;

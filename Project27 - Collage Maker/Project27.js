@@ -1,3 +1,5 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
 	// Credit to Laurence on Stackexchange for providing the guidelines for this to work
 	function startDragging(e) {
@@ -63,7 +65,6 @@ $(document).ready(function(){
 		});
 	}
 
-	
 	// Click the button to add the image from the url
 	$('#addimage').click(function(){
 		var url = prompt("Enter the image url, e.g. ../folder/image.png or http://www.website.com/image.png");

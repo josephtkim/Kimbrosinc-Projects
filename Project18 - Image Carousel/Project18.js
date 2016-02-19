@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function() {
+	// Set the image and message variables 
 	var image1 = "../Project18 - Image Carousel/slide1.png";
 	var image2 = "../Project18 - Image Carousel/slide2.png";
 	var image3 = "../Project18 - Image Carousel/slide3.png";
@@ -23,6 +26,7 @@ $(document).ready(function() {
 	var myVar;
 	var autoswitch = 0;
 		
+	// Auto scroll through the slides
 	$("#scroll-auto").click(function() {
 		clearTimeout(myVar);
 		if (autoswitch == 0) {
@@ -60,6 +64,7 @@ $(document).ready(function() {
 		}
 	}
 	
+	// Manually scroll right 
 	$("#scroll-right").click(function() {
 		clearTimeout(myVar);
 		if (current < 4) {
@@ -84,6 +89,7 @@ $(document).ready(function() {
 		}
 	})
 	
+	// Manually scroll left
 	$("#scroll-left").click(function() {
 		clearTimeout(myVar);
 		if (current > 0) {
@@ -106,7 +112,4 @@ $(document).ready(function() {
 			);
 		}
 	})
-	
-
-	
 })

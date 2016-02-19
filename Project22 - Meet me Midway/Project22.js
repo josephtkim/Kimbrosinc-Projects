@@ -1,3 +1,6 @@
+/* By Joseph Kim, 2016 */
+
+// Set some variables to be used 
 var address1;
 var address2;
 var lat1;
@@ -8,7 +11,7 @@ var lng2;
 var currentlat = 39.397;
 var currentlong = -96.244;
 
-// Compute the geographic midpoint given two coordinates
+// Compute the geographic midpoint given two coordinates and return the coordinates in latitude and longitude
 var midPoint = function(lt1, ln1, lt2, ln2) {
 	var coords = [0, 0]; 	
 	var lon1 = ln1 * Math.PI / 180;
@@ -48,10 +51,9 @@ function initMap() {
 	// Geocode address 1
     address1 = document.getElementById('address1').value;
 	geocoder.geocode({'address': address1}, function(results1, status) {
-		//if (status === google.maps.GeocoderStatus.OK) {
 		  lat1 = results1[0].geometry.location.lat();
 		  lng1 = results1[0].geometry.location.lng();				
-		  //alert(lat1 + ', ' + lng1);
+		  
 		  document.getElementById('address1lat').value = lat1;
 		  document.getElementById('address1lng').value = lng1;
 		  
@@ -59,19 +61,14 @@ function initMap() {
 			map: map,
 			position: results1[0].geometry.location,
 			label: "1"			
-		  });
-		//} else {
-		 // alert('Geocode was not successful for the following reason: ' + status);
-		//}
+		  });		
 	  });	 
 	
 	// Geocode address 2
 	address2 = document.getElementById('address2').value;
-	geocoder.geocode({'address': address2}, function(results2, status) {
-		//if (status === google.maps.GeocoderStatus.OK) {		 
+	geocoder.geocode({'address': address2}, function(results2, status) {	 
 		  lat2 = results2[0].geometry.location.lat();
 		  lng2 = results2[0].geometry.location.lng();
-		  //alert(lat2 + ', ' + lng2);
 		  document.getElementById('address2lat').value = lat2;
 		  document.getElementById('address2lng').value = lng2;
 		  
@@ -84,6 +81,7 @@ function initMap() {
   });
 }
 
+// Take in the input and make things work
 $(document).ready(function() {
 	$('#compute').click(function(){
 		 var latitude1 = document.getElementById('address1lat').value;

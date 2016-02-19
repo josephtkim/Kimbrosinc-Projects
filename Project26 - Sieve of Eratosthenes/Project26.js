@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set some variables
 	var cols;
 	var rows;
 	var count = 1;
@@ -7,7 +10,7 @@ $(document).ready(function(){
 	
 	document.getElementById('new').value = "0";
 	
-	// Prime checker
+	// Prime number checker
 	function isprime(n) {
 		if (n === 1) {
 			return 2;
@@ -25,7 +28,7 @@ $(document).ready(function(){
 		return 1;
 	}
 
-	// Generate all the numbers!
+	// Generate the sieve
 	function generatefield(upperbound){
 		count = 1;
 		cols = 15;
@@ -43,10 +46,7 @@ $(document).ready(function(){
 		rows = rows;
 		
 		$grid = $('#field');
-		
-		// Remaining flags, smiley, timer
-	
-	
+			
 		for(var i = 1; i <= rows; i++)	
 		{
 			var row = '<div>';
@@ -73,7 +73,7 @@ $(document).ready(function(){
 		document.getElementById('title').innerHTML = "All primes up to " + String(upperbound) + ':';
 	}
 
-	
+	// Generate the sieve
 	$('#new').click(function(){
 		if (document.getElementById('new').value === "1") {
 			location.reload();

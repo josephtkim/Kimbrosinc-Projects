@@ -1,4 +1,7 @@
+/* By Joseph Kim, 2016 */
+
 $(document).ready(function(){
+	// Set some important variables
 	var turnnumber = 1;
 	var gameover = 0;
 	var currentboard = [];
@@ -102,6 +105,7 @@ $(document).ready(function(){
 	var downright = [];
 	var downleft = [];
 	
+	// function to clear a given array
 	function cleararray(array){
 		var length = array.length;
 		for (var i = 0; i < length; i++) {
@@ -129,22 +133,9 @@ $(document).ready(function(){
 		var downright = [];
 		var downleft = [];
 		
-		//alert(currentcolor);
-		
 		var row = parseInt(position.substr(0, position.indexOf('-')));
 		var col = parseInt(position.substr(position.indexOf('-')+1, position.length));
 		var evaluation = 0;
-		
-		//alert(row);
-		//alert(col);
-	
-		//alert(row);
-		//alert(col);
-		
-		// Check in 8 directions
-		// [upleft]   [up]    [upright]
-		// [left]     [cur]   [right]
-		// [downleft] [down]  [downright]
 		
 		// upward check
 		if ((currentboard[row-1][col] === nextcolor) && (currentboard[row-2][col] === nextcolor) && (currentboard[row-3][col] === nextcolor) && (currentboard[row-4][col] === nextcolor) && (currentboard[row-5][col] === nextcolor) && (currentboard[row-6][col] === nextcolor) && (currentboard[row-7][col] === currentcolor)) {
@@ -155,7 +146,6 @@ $(document).ready(function(){
 			up.push(changetoposition(row-5, col));
 			up.push(changetoposition(row-6, col));
 			evaluation = 1;
-			//alert("all up");
 		} 
 		else if ((currentboard[row-1][col] === nextcolor) && (currentboard[row-2][col] === nextcolor) && (currentboard[row-3][col] === nextcolor) && (currentboard[row-4][col] === nextcolor) && (currentboard[row-5][col] === nextcolor) && (currentboard[row-6][col] === currentcolor)) {
 			up.push(changetoposition(row-1, col));
@@ -199,7 +189,6 @@ $(document).ready(function(){
 			down.push(changetoposition(row+4, col));
 			down.push(changetoposition(row+5, col));
 			down.push(changetoposition(row+6, col));
-			//alert("all down");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row+1][col] === nextcolor) && (currentboard[row+2][col] === nextcolor) && (currentboard[row+3][col] === nextcolor) && (currentboard[row+4][col] === nextcolor) && (currentboard[row+5][col] === nextcolor) && (currentboard[row+6][col] === currentcolor)) {
@@ -244,7 +233,6 @@ $(document).ready(function(){
 			left.push(changetoposition(row, col-4));
 			left.push(changetoposition(row, col-5));
 			left.push(changetoposition(row, col-6));
-			//alert("all left");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row][col-1] === nextcolor) && (currentboard[row][col-2] === nextcolor) && (currentboard[row][col-3] === nextcolor) && (currentboard[row][col-4] === nextcolor) && (currentboard[row][col-5] === nextcolor) && (currentboard[row][col-6] === currentcolor)) {
@@ -289,7 +277,6 @@ $(document).ready(function(){
 			right.push(changetoposition(row, col+4));
 			right.push(changetoposition(row, col+5));
 			right.push(changetoposition(row, col+6));
-			//alert("all right");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row][col+1] === nextcolor) && (currentboard[row][col+2] === nextcolor) && (currentboard[row][col+3] === nextcolor) && (currentboard[row][col+4] === nextcolor) && (currentboard[row][col+5] === nextcolor) && (currentboard[row][col+6] === currentcolor)) {
@@ -335,7 +322,6 @@ $(document).ready(function(){
 			upright.push(changetoposition(row-4, col+4));
 			upright.push(changetoposition(row-5, col+5));
 			upright.push(changetoposition(row-6, col+6));
-			//alert("all up right");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row-1][col+1] === nextcolor) && (currentboard[row-2][col+2] === nextcolor) && (currentboard[row-3][col+3] === nextcolor) && (currentboard[row-4][col+4] === nextcolor) && (currentboard[row-5][col+5] === nextcolor) && (currentboard[row-6][col+6] === currentcolor)) {
@@ -380,7 +366,6 @@ $(document).ready(function(){
 			downright.push(changetoposition(row+4, col+4));
 			downright.push(changetoposition(row+5, col+5));
 			downright.push(changetoposition(row+6, col+6));
-			//alert("all down right");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row+1][col+1] === nextcolor) && (currentboard[row+2][col+2] === nextcolor) && (currentboard[row+3][col+3] === nextcolor) && (currentboard[row+4][col+4] === nextcolor) && (currentboard[row+5][col+5] === nextcolor) && (currentboard[row+6][col+6] === currentcolor)) {
@@ -425,7 +410,6 @@ $(document).ready(function(){
 			downleft.push(changetoposition(row+4, col-4));
 			downleft.push(changetoposition(row+5, col-5));
 			downleft.push(changetoposition(row+6, col-6));
-			//alert("all downleft");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row+1][col-1] === nextcolor) && (currentboard[row+2][col-2] === nextcolor) && (currentboard[row+3][col-3] === nextcolor) && (currentboard[row+4][col-4] === nextcolor) && (currentboard[row+5][col-5] === nextcolor) && (currentboard[row+6][col-6] === currentcolor)) {
@@ -471,7 +455,6 @@ $(document).ready(function(){
 			upleft.push(changetoposition(row-4, col-4));
 			upleft.push(changetoposition(row-5, col-5));
 			upleft.push(changetoposition(row-6, col-6));
-			//alert("all up left");
 			evaluation = 1;
 		} 
 		else if ((currentboard[row-1][col-1] === nextcolor) && (currentboard[row-2][col-2] === nextcolor) && (currentboard[row-3][col-3] === nextcolor) && (currentboard[row-4][col-4] === nextcolor) && (currentboard[row-5][col-5] === nextcolor) && (currentboard[row-6][col-6] === currentcolor)) {
@@ -507,18 +490,7 @@ $(document).ready(function(){
 		else {
 			cleararray(upleft);
 		}
-		/*
-		alert("up down left right upright upleft downright downleft:");
-		alert(up);
-		alert(down);
-		alert(left);
-		alert(right);
-		alert(upright);
-		alert(upleft);
-		alert(downright);
-		alert(downleft);
-		*/
-		////////////////////
+
 		if (evaluation === 1) {
 			for (var i = 0; i < up.length; i++) {
 				squarestoflip.push(up[i]);
@@ -545,23 +517,17 @@ $(document).ready(function(){
 				squarestoflip.push(downleft[i]);
 			}
 			
-			// checking if legit
 			if (squarestoflip.length > 0) {
 				flipcolors(squarestoflip);
 			}
-			else {
-				//alert("Not a legit move!");
-			}
+
 			return evaluation;
 		}
 	}
 	
+	// Flip the colors 
 	function flipcolors(squarestoflip) {
-		for (var i = 0; i < squarestoflip.length; i++) {
-			//alert("all values in squarestoflip:");
-			//alert(squarestoflip[i]);
-			//alert(document.getElementById(squarestoflip[i]).value);
-			
+		for (var i = 0; i < squarestoflip.length; i++) {			
 			if (document.getElementById(squarestoflip[i]).value === "2") {
 				document.getElementById(squarestoflip[i]).style.backgroundColor = "white";
 				document.getElementById(squarestoflip[i]).value = "1";
@@ -583,10 +549,8 @@ $(document).ready(function(){
 		cleararray(squarestoflip);
 	}
 	
-	// Click the squares
-	$(".square").click(function(){		
-		//alert(currentboard[row][col]);
-		
+	// Click the square
+	$(".square").click(function(){
 		if ((this).value === "0" && gameover === 0) {
 			if (checklegitmove((this).id, currentboard, turnnumber) === 1) { 
 		
@@ -624,7 +588,7 @@ $(document).ready(function(){
 		
 	})
 	
-	// Show current piece on board
+	// Show the current piece on board on hover
 	$(".square").mouseover(function(){
 		if ((this).value === "0") {
 			if (turnnumber % 2 === 1) {
@@ -661,9 +625,4 @@ $(document).ready(function(){
 			location.reload();
 		}
 	})
-	
-	// TODO
-	// Show current player turn
-	// Update game graphics
-	
 })
